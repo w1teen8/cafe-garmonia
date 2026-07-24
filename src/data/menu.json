@@ -1,0 +1,243 @@
+{
+  "categories": [
+    { "id": "breakfast", "label": "Сніданки" },
+    { "id": "mains", "label": "Основні страви" },
+    { "id": "salads", "label": "Салати" },
+    { "id": "soups", "label": "Супи" },
+    { "id": "pasta", "label": "Паста" },
+    { "id": "pizza", "label": "Піца" },
+    { "id": "desserts", "label": "Десерти" },
+    { "id": "coffee", "label": "Кава" },
+    { "id": "tea", "label": "Чай" },
+    { "id": "cocktails", "label": "Коктейлі" },
+    { "id": "drinks", "label": "Напої" }
+  ],
+  "items": [
+    {
+      "id": "breakfast-1",
+      "name": "Круасан з мигдалем",
+      "description": "Хрусткий шаровий круасан із мигдальним кремом та пудрою цукру",
+      "price": 145,
+      "category": "breakfast",
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=80",
+      "tags": ["вегетаріанське"]
+    },
+    {
+      "id": "breakfast-2",
+      "name": "Панкейки з лісовими ягодами",
+      "description": "Повітряні панкейки, ягідний соус, кленовий сироп, свіжі ягоди",
+      "price": 175,
+      "category": "breakfast",
+      "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=900&q=80",
+      "tags": ["вегетаріанське"],
+      "signature": true
+    },
+    {
+      "id": "breakfast-3",
+      "name": "Авокадо-боул з яйцем пашот",
+      "description": "Крем з авокадо, яйце пашот, свіжі овочі та мікрозелень",
+      "price": 195,
+      "category": "breakfast",
+      "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "mains-1",
+      "name": "Стейк рібай",
+      "description": "Мармурова яловичина, печені овочі, соус демі-глас",
+      "price": 465,
+      "category": "mains",
+      "image": "https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=80",
+      "signature": true
+    },
+    {
+      "id": "mains-2",
+      "name": "Тартар з яловичини",
+      "description": "Ніжна яловичина, каперси, жовток, гірчичний соус, грінки",
+      "price": 325,
+      "category": "mains",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "mains-3",
+      "name": "Домашній бургер \"Гармонія\"",
+      "description": "Яловичина, бекон, чеддер, карамелізована цибуля, соус бренді",
+      "price": 245,
+      "category": "mains",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "salads-1",
+      "name": "Салат з козячим сиром",
+      "description": "Мікс салатів, тепла грушка, волоські горіхи, мед, козячий сир",
+      "price": 215,
+      "category": "salads",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+      "tags": ["вегетаріанське"]
+    },
+    {
+      "id": "salads-2",
+      "name": "Овочевий салат з авокадо",
+      "description": "Сезонні овочі, авокадо, руккола, заправка з лимонної олії",
+      "price": 235,
+      "category": "salads",
+      "image": "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=900&q=80",
+      "tags": ["вегетаріанське"]
+    },
+    {
+      "id": "soups-1",
+      "name": "Крем-суп з гарбуза",
+      "description": "Печений гарбуз, кокосове молоко, гарбузове насіння, чилі-олія",
+      "price": 155,
+      "category": "soups",
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80",
+      "tags": ["вегетаріанське"]
+    },
+    {
+      "id": "soups-2",
+      "name": "Крем-суп із білих грибів",
+      "description": "Лісові гриби, вершки, трюфельна олія, грінки на заквасці",
+      "price": 175,
+      "category": "soups",
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80&sat=-30"
+    },
+    {
+      "id": "pasta-1",
+      "name": "Паста з трюфелем",
+      "description": "Тальятеллє, вершковий соус, чорний трюфель, пармезан",
+      "price": 285,
+      "category": "pasta",
+      "image": "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?auto=format&fit=crop&w=900&q=80",
+      "signature": true
+    },
+    {
+      "id": "pasta-2",
+      "name": "Паста Болоньєзе",
+      "description": "Домашня паппарделле, соус болоньєзе тривалого томління, пармезан",
+      "price": 235,
+      "category": "pasta",
+      "image": "https://images.unsplash.com/photo-1516685018646-549198525c1b?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "pizza-1",
+      "name": "Піца Маргарита",
+      "description": "Томатний соус, моцарела ді буфала, базилік, оливкова олія",
+      "price": 225,
+      "category": "pizza",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "pizza-2",
+      "name": "Піца з прошутто та рукколою",
+      "description": "Прошутто крудо, руккола, пармезан, моцарела",
+      "price": 275,
+      "category": "pizza",
+      "image": "https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "desserts-1",
+      "name": "Тірамісу",
+      "description": "Класичний рецепт, маскарпоне, кавовий сироп, какао",
+      "price": 165,
+      "category": "desserts",
+      "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=80",
+      "signature": true
+    },
+    {
+      "id": "desserts-2",
+      "name": "Карамельний десерт з морозивом",
+      "description": "Теплий десерт із карамельним соусом та ванільним морозивом",
+      "price": 175,
+      "category": "desserts",
+      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "desserts-3",
+      "name": "Чізкейк Нью-Йорк",
+      "description": "Ніжний чізкейк, ягідний соус, пісочна основа",
+      "price": 155,
+      "category": "desserts",
+      "image": "https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "coffee-1",
+      "name": "Фірмовий флет-вайт",
+      "description": "Еспресо на основі, оксамитове молоко, авторська обсмажка",
+      "price": 95,
+      "category": "coffee",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",
+      "signature": true
+    },
+    {
+      "id": "coffee-2",
+      "name": "Капучино",
+      "description": "Класичний еспресо з молочною пінкою",
+      "price": 85,
+      "category": "coffee",
+      "image": "https://images.unsplash.com/photo-1522992319-0365e5f11656?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "coffee-3",
+      "name": "Раф-кава",
+      "description": "Еспресо, вершки, ванільний цукор",
+      "price": 105,
+      "category": "coffee",
+      "image": "https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "coffee-4",
+      "name": "Еспресо",
+      "description": "Подвійний еспресо з авторської суміші зерен",
+      "price": 65,
+      "category": "coffee",
+      "image": "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "tea-1",
+      "name": "Чай з чебрецем та медом",
+      "description": "Трав'яний чай, свіжий чебрець, липовий мед, домашнє печиво",
+      "price": 75,
+      "category": "tea",
+      "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "tea-2",
+      "name": "Матча-латте",
+      "description": "Церемоніальна матча, вершкове молоко",
+      "price": 95,
+      "category": "tea",
+      "image": "https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "cocktails-1",
+      "name": "Апероль Шприц",
+      "description": "Апероль, просекко, содова, апельсин",
+      "price": 195,
+      "category": "cocktails",
+      "image": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "cocktails-2",
+      "name": "Espresso Martini",
+      "description": "Горілка, кавовий лікер, свіжий еспресо",
+      "price": 215,
+      "category": "cocktails",
+      "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "drinks-1",
+      "name": "Домашній лимонад",
+      "description": "Цитрусові, м'ята, содова",
+      "price": 85,
+      "category": "drinks",
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "id": "drinks-2",
+      "name": "Ягідний фреш",
+      "description": "Свіжовичавлений сік із сезонних ягід та м'яти",
+      "price": 95,
+      "category": "drinks",
+      "image": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=900&q=80"
+    }
+  ]
+}
