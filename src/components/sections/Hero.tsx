@@ -1,115 +1,124 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ChevronDown, Star, Leaf, Sparkles, Coffee } from "lucide-react";
-import { SplitLines } from "@/components/ui/Reveal";
-import { MagneticButton, MagneticLink } from "@/components/ui/MagneticButton";
-import { scrollToReservation } from "@/lib/scroll";
+import { Leaf, MapPin, Clock, CalendarDays } from "lucide-react";
+import { PointIcon } from "@/components/ui/PointIcon";
+import { IconArrow, Swash, Sprig } from "@/components/ui/icons";
+import { HERO_HIGHLIGHTS, CONTACT, IMAGES } from "@/data/site";
 
-const STATS = [
-  { icon: Star, label: "Топ рейтинг", value: "★★★★★" },
-  { icon: Leaf, label: "Свіжі інгредієнти", value: "Фреш" },
-  { icon: Sparkles, label: "Преміум сервіс", value: "Преміум" },
-  { icon: Coffee, label: "Затишна атмосфера", value: "Затишно" },
-];
+function scrollTo(href: string) {
+  document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+}
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-primary"
-    >
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=2000&q=80"
-          alt="Затишна сонячна тераса кафе «Гармонія»"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-transparent" />
-      </div>
+    <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36 lg:pt-40">
+      <Sprig className="pointer-events-none absolute right-6 top-24 hidden h-16 w-40 text-gold/40 lg:block" />
 
-      <div className="container-brand relative z-10 flex flex-1 flex-col justify-center pt-32">
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="eyebrow mb-6 text-beige"
-        >
-          Боярка, Україна
-        </motion.span>
+      <div className="container-brand grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12">
+        {/* Left */}
+        <div className="max-w-[37rem]">
+          <p className="eyebrow rise rise-1 mb-6">
+            Свято без турбот
+            <Leaf size={14} aria-hidden="true" />
+          </p>
 
-        <h1 className="font-display text-[16vw] italic leading-[0.92] text-bg sm:text-[11vw] md:text-[8.5vw] lg:text-[7vw]">
-          <SplitLines lines={["Їжа,", "що об'єднує", "людей."]} baseDelay={0.3} staggerDelay={0.15} />
-        </h1>
+          <h1 className="rise rise-2 font-display font-medium leading-[0.96] text-primary text-[13vw] sm:text-[9vw] lg:text-[clamp(3.75rem,5.6vw,6.25rem)]">
+            Їжа, що
+            <br />
+            обʼєднує
+            <br />
+            <span className="relative inline-block leading-none">
+              <span className="font-script text-[1.2em] text-primary">людей</span>
+              <Swash className="absolute -bottom-2 left-0 h-3.5 w-[108%] text-gold" />
+              <svg
+                viewBox="0 0 24 24"
+                className="absolute -right-11 top-1/2 hidden h-7 w-7 -translate-y-1/2 text-gold sm:block"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M12 20s-6.4-4.2-9-8c-1.8-2.6-1-6.3 2-7.5 2-.8 4 .1 5.2 1.8C13.4 4.6 15.4 3.7 17.4 4.5c3 1.2 3.8 4.9 2 7.5-2.6 3.8-9 8-9 8Z" />
+              </svg>
+            </span>
+          </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.05, duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
-          className="mt-8 max-w-lg text-base leading-relaxed text-beige/90 md:text-lg"
-        >
-          Кафе &quot;Гармонія&quot; — місце, де аромат свіжої кави, домашня кухня та тепла
-          атмосфера створюють особливі моменти.
-        </motion.p>
+          <p className="rise rise-3 mt-7 max-w-md text-base leading-relaxed text-secondary md:text-lg">
+            Кафе Гармонія — це місце, де смак, атмосфера та щирі емоції створюють
+            ідеальний відпочинок.
+          </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.25, duration: 0.9, ease: [0.19, 1, 0.22, 1] }}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <MagneticLink
-            href="#menu"
-            className="rounded-full bg-bg px-8 py-4 text-sm font-medium tracking-wide text-primary transition-transform hover:scale-[1.03]"
-          >
-            Переглянути меню
-          </MagneticLink>
-          <MagneticButton
-            onClick={scrollToReservation}
-            className="glass-dark rounded-full px-8 py-4 text-sm font-medium tracking-wide text-bg transition-transform hover:scale-[1.03]"
-          >
-            Забронювати столик
-          </MagneticButton>
-        </motion.div>
-      </div>
-
-      <div className="container-brand relative z-10 pb-32 lg:pb-10">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.9 }}
-          className="flex flex-wrap items-center gap-3 border-t border-bg/15 pt-8"
-        >
-          {STATS.map((s) => (
-            <div
-              key={s.label}
-              className="glass-dark flex items-center gap-2.5 rounded-full px-4 py-2.5 text-bg"
+          <div className="rise rise-4 mt-9 flex flex-wrap items-center gap-3">
+            <button type="button" onClick={() => scrollTo("#menu")} className="btn btn-primary">
+              Переглянути меню
+              <IconArrow size={16} />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("#contacts")}
+              className="btn btn-outline"
             >
-              <s.icon size={14} className="text-gold" />
-              <span className="text-xs font-medium tracking-wide">{s.label}</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+              Забронювати столик
+              <CalendarDays size={16} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-bg/80 lg:flex"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={20} />
-        </motion.div>
-      </motion.div>
+          <ul className="rise rise-5 mt-10 flex flex-wrap items-center gap-x-3.5 gap-y-3 border-t border-border-soft pt-6 text-[0.73rem] text-secondary">
+            {HERO_HIGHLIGHTS.map((h) => (
+              <li
+                key={h.label}
+                className="flex items-center gap-1.5 whitespace-nowrap [&:not(:last-child)]:border-r [&:not(:last-child)]:border-border-soft [&:not(:last-child)]:pr-3.5"
+              >
+                <PointIcon name={h.icon} size={16} className="shrink-0 text-gold" />
+                {h.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right */}
+        <div className="rise-img relative">
+          <div className="hero-blob img-zoom relative aspect-[4/5] w-full overflow-hidden shadow-[0_40px_80px_-30px_rgba(42,38,30,0.4)] lg:aspect-[4/4.3]">
+            <Image
+              src={IMAGES.heroInterior}
+              alt="Світлий зелений інтерʼєр кафе Гармонія з великою кількістю рослин"
+              fill
+              priority
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div className="mx-auto -mt-16 w-[min(20rem,90%)] rounded-brand bg-olive-deep p-6 text-cream shadow-[0_30px_60px_-20px_rgba(42,38,30,0.55)] sm:absolute sm:bottom-10 sm:right-0 sm:mx-0 sm:mt-0 sm:w-72 lg:-right-4">
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/25">
+                <MapPin size={16} strokeWidth={1.6} aria-hidden="true" />
+              </span>
+              <p className="text-sm leading-relaxed">
+                {CONTACT.addressLines.map((l) => (
+                  <span key={l} className="block">
+                    {l}
+                  </span>
+                ))}
+              </p>
+            </div>
+            <div className="my-4 h-px bg-cream/15" />
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/25">
+                <Clock size={16} strokeWidth={1.6} aria-hidden="true" />
+              </span>
+              <p className="text-sm leading-relaxed">
+                {CONTACT.hoursLines.map((l) => (
+                  <span key={l} className="block">
+                    {l}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

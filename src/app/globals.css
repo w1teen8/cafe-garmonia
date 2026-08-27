@@ -1,50 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #f8f6f2;
-  --color-bg-alt: #f2eee6;
-  --color-card: rgba(255, 255, 255, 0.72);
-  --color-card-solid: #ffffff;
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-primary: #2c2826;
-  --color-secondary: #766d66;
-  --color-coffee: #7a5a43;
-  --color-beige: #d8c4a7;
-  --color-gold: #c5a26d;
-  --cursor-x: 50%;
-  --cursor-y: 50%;
+  /* Surfaces */
+  --color-bg: #f6f1e6;
+  --color-bg-alt: #efe6d5;
+  --color-cream: #fbf7ef;
+  --color-card: #ffffff;
+
+  /* Ink */
+  --color-primary: #2a2620;
+  --color-secondary: #7b7264;
+
+  /* Accents */
+  --color-olive: #33321f;
+  --color-olive-deep: #2b2a1a;
+  --color-forest: #3c4a38;
+  --color-footer: #7f7a62;
+  --color-gold: #b58a52;
+  --color-beige: #d9c7a6;
+
+  --color-border: rgba(42, 38, 30, 0.14);
+  --color-border-soft: rgba(42, 38, 30, 0.08);
 }
 
 @theme inline {
   --color-bg: var(--color-bg);
   --color-bg-alt: var(--color-bg-alt);
+  --color-cream: var(--color-cream);
   --color-card: var(--color-card);
-  --color-card-solid: var(--color-card-solid);
-  --color-border: var(--color-border);
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
-  --color-coffee: var(--color-coffee);
-  --color-beige: var(--color-beige);
+  --color-olive: var(--color-olive);
+  --color-olive-deep: var(--color-olive-deep);
+  --color-forest: var(--color-forest);
+  --color-footer: var(--color-footer);
   --color-gold: var(--color-gold);
+  --color-beige: var(--color-beige);
+  --color-border: var(--color-border);
+  --color-border-soft: var(--color-border-soft);
 
-  --font-display: var(--font-playfair), "Georgia", serif;
+  --font-display: var(--font-playfair), "Georgia", "Times New Roman", serif;
+  --font-script: var(--font-caveat), "Segoe Script", cursive;
   --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
 
-  --radius-brand: 24px;
-  --radius-brand-sm: 14px;
+  --radius-brand: 28px;
+  --radius-brand-sm: 18px;
 
-  --animate-marquee: marquee 32s linear infinite;
   --animate-fade-up: fade-up 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  --animate-spin-slow: spin 14s linear infinite;
 
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -57,13 +60,32 @@
   }
 }
 
-* {
-  border-color: var(--color-border);
+/* Above-the-fold entrance. Content stays fully visible at all times (opacity:1);
+   only a small upward drift is animated, so a stalled animation is imperceptible
+   and the hero never depends on JS to be readable. */
+.rise {
+  animation: rise-kf 0.85s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.rise-1 { animation-delay: 0.02s; }
+.rise-2 { animation-delay: 0.1s; }
+.rise-3 { animation-delay: 0.2s; }
+.rise-4 { animation-delay: 0.3s; }
+.rise-5 { animation-delay: 0.4s; }
+.rise-img {
+  animation: rise-kf 1s cubic-bezier(0.19, 1, 0.22, 1) 0.15s both;
+}
+@keyframes rise-kf {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 html {
   background: var(--color-bg);
-  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -71,15 +93,15 @@ body {
   color: var(--color-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-bg);
+  color: var(--color-cream);
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -92,94 +114,166 @@ body {
   border: 2px solid var(--color-bg);
 }
 
+/* ---------- Shared primitives ---------- */
+
+.container-brand {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-brand {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-brand {
+    padding-inline: 3rem;
+  }
+}
+
 .font-display {
   font-family: var(--font-display);
 }
 
-.glass {
-  background: var(--color-card);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 600;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.eyebrow svg {
+  color: var(--color-gold);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.35rem;
+  transition: gap 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.link-arrow:hover {
+  gap: 0.9rem;
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 1rem 1.9rem;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-olive-deep);
+  color: var(--color-cream);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(43, 42, 26, 0.24);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
   border: 1px solid var(--color-border);
 }
-
-.glass-dark {
-  background: rgba(44, 40, 38, 0.28);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(248, 246, 242, 0.18);
+.btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
 }
 
-.reservation-input {
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(248, 246, 242, 0.2);
-  background: rgba(248, 246, 242, 0.06);
-  padding: 0.75rem 1rem;
-  font-size: 0.9375rem;
-  color: var(--color-bg);
-  outline: none;
-  transition: border-color 0.25s ease, background 0.25s ease;
-  color-scheme: dark;
+.card-outline {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-brand);
+  background: var(--color-cream);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
-
-.reservation-input::placeholder {
-  color: rgba(248, 246, 242, 0.45);
-}
-
-.reservation-input:focus {
+.card-outline:hover {
+  transform: translateY(-4px);
   border-color: var(--color-gold);
-  background: rgba(248, 246, 242, 0.1);
+  box-shadow: 0 22px 44px rgba(42, 38, 30, 0.08);
+}
+
+/* Organic hero image mask — soft rounded rectangle with a large, gentle top-left curve */
+.hero-blob {
+  border-radius: 47% 22% 26% 36% / 44% 18% 24% 42%;
+}
+
+@media (max-width: 900px) {
+  .hero-blob {
+    border-radius: 2.25rem;
+  }
+}
+
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-/* Custom cursor is desktop-only, fine pointer devices */
-@media (hover: hover) and (pointer: fine) {
-  .cursor-none-desktop {
-    cursor: none;
-  }
-}
-
-.container-brand {
-  width: 100%;
-  max-width: 1360px;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .container-brand {
-    padding-inline: 3rem;
-  }
-}
-
-.eyebrow {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  font-weight: 600;
-}
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-
 .lenis.lenis-stopped {
   overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

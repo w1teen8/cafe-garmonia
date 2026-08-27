@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.19, 1, 0.22, 1] as const;
@@ -21,11 +21,17 @@ export function Reveal({
   duration?: number;
   once?: boolean;
 }) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, amount: 0.3 }}
+      viewport={{ once, amount: 0.15 }}
       transition={{ duration, delay, ease: EASE }}
       className={className}
     >
