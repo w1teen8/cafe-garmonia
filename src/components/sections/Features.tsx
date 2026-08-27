@@ -6,7 +6,7 @@ import { FEATURES } from "@/data/site";
 
 export default function Features() {
   return (
-    <section className="bg-bg-alt pb-20 md:pb-28">
+    <section className="bg-bg-alt pb-20 md:pb-28 xl:pb-32">
       <div className="container-brand grid gap-5 md:grid-cols-3">
         {FEATURES.map((f, i) => (
           <Reveal key={f.title} delay={i * 0.08}>

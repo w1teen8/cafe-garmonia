@@ -12,7 +12,7 @@ function scrollTo(href: string) {
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-bg-alt py-20 md:py-28">
+    <section id="about" className="relative overflow-hidden bg-bg-alt py-20 md:py-28 xl:py-32">
       <Sprig className="pointer-events-none absolute right-4 top-16 hidden h-16 w-44 rotate-6 text-gold/40 lg:block" />
 
       <div className="container-brand grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -52,7 +52,7 @@ export default function About() {
 
         {/* Right image composition */}
         <Reveal delay={0.1}>
-          <div className="grid h-[380px] grid-cols-2 grid-rows-2 gap-4 sm:h-[440px] lg:h-[460px]">
+          <div className="grid h-[380px] grid-cols-2 grid-rows-2 gap-4 sm:h-[440px] lg:h-[480px] xl:h-[540px]">
             <div className="img-zoom relative col-span-1 row-span-2 overflow-hidden rounded-brand">
               <Image
                 src={IMAGES.aboutLarge}

@@ -118,7 +118,7 @@ body {
 
 .container-brand {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1600px;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
@@ -131,7 +131,13 @@ body {
 
 @media (min-width: 1280px) {
   .container-brand {
-    padding-inline: 3rem;
+    padding-inline: 3.5rem;
+  }
+}
+
+@media (min-width: 1728px) {
+  .container-brand {
+    padding-inline: 4rem;
   }
 }
 

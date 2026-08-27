@@ -12,7 +12,7 @@ function scrollTo(href: string) {
 
 export default function Menu() {
   return (
-    <section id="menu" className="bg-bg py-20 md:py-28">
+    <section id="menu" className="bg-bg py-20 md:py-28 xl:py-32">
       <div className="container-brand">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">

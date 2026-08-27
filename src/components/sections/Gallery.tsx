@@ -8,7 +8,7 @@ import { GALLERY, CONTACT } from "@/data/site";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-bg py-20 md:py-28">
+    <section id="gallery" className="bg-bg py-20 md:py-28 xl:py-32">
       <div className="container-brand">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">

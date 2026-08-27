@@ -12,18 +12,18 @@ function scrollTo(href: string) {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36 lg:pt-40">
+    <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36 lg:pt-40 xl:pb-28 xl:pt-44">
       <Sprig className="pointer-events-none absolute right-6 top-24 hidden h-16 w-40 text-gold/40 lg:block" />
 
-      <div className="container-brand grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12">
+      <div className="container-brand grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
         {/* Left */}
-        <div className="max-w-[37rem]">
+        <div className="max-w-[42rem]">
           <p className="eyebrow rise rise-1 mb-6">
             Свято без турбот
             <Leaf size={14} aria-hidden="true" />
           </p>
 
-          <h1 className="rise rise-2 font-display font-medium leading-[0.96] text-primary text-[13vw] sm:text-[9vw] lg:text-[clamp(3.75rem,5.6vw,6.25rem)]">
+          <h1 className="rise rise-2 font-display font-medium leading-[0.96] text-primary text-[13vw] sm:text-[9vw] lg:text-[clamp(3.75rem,5vw,6.75rem)]">
             Їжа, що
             <br />
             обʼєднує
@@ -64,11 +64,11 @@ export default function Hero() {
             </button>
           </div>
 
-          <ul className="rise rise-5 mt-10 flex flex-wrap items-center gap-x-3.5 gap-y-3 border-t border-border-soft pt-6 text-[0.73rem] text-secondary">
+          <ul className="rise rise-5 mt-10 flex flex-wrap items-center gap-x-4 gap-y-3 border-t border-border-soft pt-6 text-[0.8rem] text-secondary">
             {HERO_HIGHLIGHTS.map((h) => (
               <li
                 key={h.label}
-                className="flex items-center gap-1.5 whitespace-nowrap [&:not(:last-child)]:border-r [&:not(:last-child)]:border-border-soft [&:not(:last-child)]:pr-3.5"
+                className="flex items-center gap-2 whitespace-nowrap [&:not(:last-child)]:border-r [&:not(:last-child)]:border-border-soft [&:not(:last-child)]:pr-4"
               >
                 <PointIcon name={h.icon} size={16} className="shrink-0 text-gold" />
                 {h.label}
