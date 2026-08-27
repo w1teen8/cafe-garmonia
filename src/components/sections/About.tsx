@@ -13,11 +13,11 @@ function scrollTo(href: string) {
 export default function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-bg-alt py-20 md:py-28 xl:py-32">
-      <Sprig className="pointer-events-none absolute right-4 top-16 hidden h-16 w-44 rotate-6 text-gold/40 lg:block" />
+      <Sprig className="pointer-events-none absolute -right-6 top-10 hidden h-24 w-72 rotate-[8deg] text-gold/45 lg:block xl:h-28 xl:w-80" />
 
-      <div className="container-brand grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="container-brand grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left copy */}
-        <div className="max-w-lg">
+        <div className="min-w-0 max-w-lg">
           <Reveal>
             <span className="eyebrow mb-5">
               Про нас

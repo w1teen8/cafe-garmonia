@@ -114,154 +114,159 @@ body {
   border: 2px solid var(--color-bg);
 }
 
-/* ---------- Shared primitives ---------- */
+/* ---------- Shared primitives ----------
+   Wrapped in @layer components so Tailwind utility classes (e.g. `hidden`,
+   `w-full`, `md:flex`) always win over these defaults. */
 
-.container-brand {
-  width: 100%;
-  max-width: 1600px;
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
-
-@media (min-width: 768px) {
+@layer components {
   .container-brand {
-    padding-inline: 2.5rem;
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
   }
-}
 
-@media (min-width: 1280px) {
-  .container-brand {
-    padding-inline: 3.5rem;
+  @media (min-width: 768px) {
+    .container-brand {
+      padding-inline: 2.5rem;
+    }
   }
-}
 
-@media (min-width: 1728px) {
-  .container-brand {
-    padding-inline: 4rem;
+  @media (min-width: 1280px) {
+    .container-brand {
+      padding-inline: 3.5rem;
+    }
   }
-}
 
-.font-display {
-  font-family: var(--font-display);
-}
+  @media (min-width: 1728px) {
+    .container-brand {
+      padding-inline: 4rem;
+    }
+  }
 
-.font-script {
-  font-family: var(--font-script);
-  font-weight: 600;
-}
+  .font-display {
+    font-family: var(--font-display);
+  }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--color-secondary);
-  font-weight: 600;
-}
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 600;
+  }
 
-.eyebrow svg {
-  color: var(--color-gold);
-}
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
 
-.link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.35rem;
-  transition: gap 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
+  .eyebrow svg {
+    color: var(--color-gold);
+  }
 
-.link-arrow:hover {
-  gap: 0.9rem;
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.35rem;
+    transition: gap 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  padding: 1rem 1.9rem;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease,
-    box-shadow 0.25s ease;
-  cursor: pointer;
-  white-space: nowrap;
-}
+  .link-arrow:hover {
+    gap: 0.9rem;
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
 
-.btn-primary {
-  background: var(--color-olive-deep);
-  color: var(--color-cream);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 34px rgba(43, 42, 26, 0.24);
-}
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 1rem 1.9rem;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease,
+      box-shadow 0.25s ease;
+    cursor: pointer;
+    white-space: nowrap;
+  }
 
-.btn-outline {
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-border);
-}
-.btn-outline:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-}
+  .btn-primary {
+    background: var(--color-olive-deep);
+    color: var(--color-cream);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(43, 42, 26, 0.24);
+  }
 
-.card-outline {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-brand);
-  background: var(--color-cream);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-}
-.card-outline:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-gold);
-  box-shadow: 0 22px 44px rgba(42, 38, 30, 0.08);
-}
+  .btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+  }
+  .btn-outline:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary);
+  }
 
-/* Organic hero image mask — soft rounded rectangle with a large, gentle top-left curve */
-.hero-blob {
-  border-radius: 47% 22% 26% 36% / 44% 18% 24% 42%;
-}
+  .card-outline {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-brand);
+    background: var(--color-cream);
+    transition: transform 0.35s ease, box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  .card-outline:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-gold);
+    box-shadow: 0 22px 44px rgba(42, 38, 30, 0.08);
+  }
 
-@media (max-width: 900px) {
+  /* Organic hero image mask — soft rounded rectangle with a gentle top-left curve */
   .hero-blob {
-    border-radius: 2.25rem;
+    border-radius: 47% 22% 26% 36% / 44% 18% 24% 42%;
   }
-}
 
-.img-zoom {
-  overflow: hidden;
-}
-.img-zoom img {
-  transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.img-zoom:hover img {
-  transform: scale(1.06);
-}
+  @media (max-width: 900px) {
+    .hero-blob {
+      border-radius: 2.25rem;
+    }
+  }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
+  .img-zoom {
+    overflow: hidden;
+  }
+  .img-zoom img {
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .img-zoom:hover img {
+    transform: scale(1.06);
+  }
 
-.text-balance {
-  text-wrap: balance;
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 .lenis.lenis-smooth {

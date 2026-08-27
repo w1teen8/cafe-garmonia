@@ -13,24 +13,24 @@ function scrollTo(href: string) {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36 lg:pt-40 xl:pb-28 xl:pt-44">
-      <Sprig className="pointer-events-none absolute right-6 top-24 hidden h-16 w-40 text-gold/40 lg:block" />
+      <Sprig className="pointer-events-none absolute right-4 top-28 hidden h-20 w-56 text-gold/40 lg:block xl:right-8 xl:top-32" />
 
-      <div className="container-brand grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
+      <div className="container-brand grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
         {/* Left */}
-        <div className="max-w-[42rem]">
+        <div className="min-w-0 max-w-[42rem]">
           <p className="eyebrow rise rise-1 mb-6">
             Свято без турбот
             <Leaf size={14} aria-hidden="true" />
           </p>
 
-          <h1 className="rise rise-2 font-display font-medium leading-[0.96] text-primary text-[13vw] sm:text-[9vw] lg:text-[clamp(3.75rem,5vw,6.75rem)]">
+          <h1 className="rise rise-2 font-display font-medium leading-[0.98] text-primary text-[clamp(2.4rem,10vw,3.5rem)] sm:text-[8vw] sm:leading-[0.96] lg:text-[clamp(3.75rem,5vw,6.75rem)]">
             Їжа, що
             <br />
             обʼєднує
             <br />
             <span className="relative inline-block leading-none">
               <span className="font-script text-[1.2em] text-primary">людей</span>
-              <Swash className="absolute -bottom-2 left-0 h-3.5 w-[108%] text-gold" />
+              <Swash className="absolute -bottom-2 left-0 h-3.5 w-full text-gold" />
               <svg
                 viewBox="0 0 24 24"
                 className="absolute -right-11 top-1/2 hidden h-7 w-7 -translate-y-1/2 text-gold sm:block"
@@ -78,7 +78,7 @@ export default function Hero() {
         </div>
 
         {/* Right */}
-        <div className="rise-img relative">
+        <div className="rise-img relative min-w-0">
           <div className="hero-blob img-zoom relative aspect-[4/5] w-full overflow-hidden shadow-[0_40px_80px_-30px_rgba(42,38,30,0.4)] lg:aspect-[4/4.3]">
             <Image
               src={IMAGES.heroInterior}

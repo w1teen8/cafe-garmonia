@@ -28,8 +28,8 @@ export default function Footer() {
       className="bg-footer text-cream"
       style={{ colorScheme: "dark" }}
     >
-      <div className="container-brand py-16 md:py-20">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1.2fr_1.3fr] lg:gap-8">
+      <div className="container-brand py-16 md:py-20 xl:py-24">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1.2fr_1.3fr] lg:gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">

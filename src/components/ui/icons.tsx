@@ -80,26 +80,28 @@ export function IconTelegram({ size = 18, ...props }: SVGProps<SVGSVGElement> & 
   );
 }
 
-/* Decorative botanical sprig */
+/* Decorative botanical sprig — a slender arching stem with alternating leaves */
 export function Sprig({ className, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 120 60"
+      viewBox="0 0 160 64"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.1"
+      strokeWidth="1.4"
       strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
       className={className}
       {...props}
     >
-      <path d="M4 42C28 40 50 30 74 12" />
-      <path d="M30 38c-2-6-8-9-14-9 1 6 6 10 14 9Z" />
-      <path d="M46 30c-1-6-6-10-13-11 0 6 5 11 13 11Z" />
-      <path d="M62 21c0-6-4-11-11-13 0 6 4 11 11 13Z" />
-      <path d="M76 13c1-6-2-12-8-15-1 6 2 12 8 15Z" />
-      <path d="M90 22c5-3 8-9 8-16-5 2-9 8-8 16Z" />
-      <path d="M104 30c5-2 9-7 10-14-6 1-10 6-10 14Z" />
+      <path d="M4 54C40 52 96 44 156 8" />
+      {/* leaves along the stem, alternating sides */}
+      <path d="M34 47c-3-8-11-11-19-9 2 8 9 12 19 9Z" fill="currentColor" fillOpacity=".12" />
+      <path d="M56 39c1-8-4-15-13-17-1 8 4 15 13 17Z" fill="currentColor" fillOpacity=".12" />
+      <path d="M82 30c-3-8-11-12-19-10 2 8 9 12 19 10Z" fill="currentColor" fillOpacity=".12" />
+      <path d="M104 21c2-8-3-16-11-18-2 8 2 15 11 18Z" fill="currentColor" fillOpacity=".12" />
+      <path d="M128 13c-2-8-11-12-19-11 3 8 10 12 19 11Z" fill="currentColor" fillOpacity=".12" />
+      <path d="M150 6c3-7-1-15-8-18-3 7 0 15 8 18Z" fill="currentColor" fillOpacity=".12" />
     </svg>
   );
 }
